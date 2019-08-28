@@ -15,6 +15,9 @@ build:
   # The build has only been tested on linux-64
   noarch: python
   skip: True  # [not linux]
+  ignore_run_exports:
+    - libgcc-ng
+    - libstdcxx-ng
 
 requirements:
   build:
