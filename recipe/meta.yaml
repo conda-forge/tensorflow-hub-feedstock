@@ -9,7 +9,7 @@ source:
   sha256: d196f014719da297dc1893bd933d72d9af69e5f6c798882be0fbcc7a2f8d534a
 
 build:
-  number: 0
+  number: 1
   # This is a noarch: python package, it contains no compiled code but a
   # compiler is required to convert protocol buffer definitions.
   # The build has only been tested on linux-64
