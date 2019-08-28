@@ -5,17 +5,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/py2.py3/t/tensorflow_hub/tensorflow_hub-{{ version }}-py2.py3-none-any.whl
-  sha256: 0c91f48a81cb0d1519bbff54d88f5f6cb4ae798569beea01080a42ede0ed7698
+  url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
+  sha256: d196f014719da297dc1893bd933d72d9af69e5f6c798882be0fbcc7a2f8d534a
 
 build:
   number: 0
+  # This is a noarch: python package, it contains no compiled code but a
+  # compiler is required to convert protocol buffer definitions.
+  # The build has only been tested on linux-64
   noarch: python
-  # install using pip from the whl files on PyPI
-  # b/c this uses bazel to build.
-  script: python -m pip install --no-deps --ignore-installed tensorflow_hub-{{ version }}-py2.py3-none-any.whl
+  skip: True  # [not linux]
 
 requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - bazel
   host:
     - python
     - pip
@@ -28,14 +33,12 @@ requirements:
 
 test:
   imports:
-    # Skip the import test on Linux as wheel file require a more recent
-    # version of GLIBC++ than the VM used to build and test package.
-    - tensorflow_hub  # [not linux]
+    - tensorflow_hub
 
 about:
   home: https://www.tensorflow.org/hub/
   license: Apache-2.0
-  license_file: tensorflow_hub-{{ version }}.dist-info/LICENSE.txt
+  license_file: LICENSE
   summary: A library for transfer learning by reusing parts of TensorFlow models.
 
 extra:
