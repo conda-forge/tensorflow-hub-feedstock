@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: tensorflow-hub
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
-  sha256: d196f014719da297dc1893bd933d72d9af69e5f6c798882be0fbcc7a2f8d534a
+  sha256: fcd8aa81ad6413edc7c25f52c91d151e853888b2ae414166be5d2043e8ef3fa8
 
 build:
-  number: 1
+  number: 0
   # This is a noarch: python package, it contains no compiled code but a
   # compiler is required to convert protocol buffer definitions.
   # The build has only been tested on linux-64
