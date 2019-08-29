@@ -1,4 +1,4 @@
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 package:
   name: tensorflow-hub
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/py2.py3/t/tensorflow_hub/tensorflow_hub-{{ version }}-py2.py3-none-any.whl
-  sha256: 0c91f48a81cb0d1519bbff54d88f5f6cb4ae798569beea01080a42ede0ed7698
+  sha256: cdcc886c8c834bb97e8fd5927ef0cdf9a26a15b51618be11fa0f412def154719
 
 build:
   number: 0
