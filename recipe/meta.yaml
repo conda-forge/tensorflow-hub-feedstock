@@ -1,4 +1,4 @@
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 
 package:
   name: tensorflow-hub
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
-  sha256: f00b6a258725baacf2a48abdcf421da98cbe77af673e3353cdb8c8ae968a7909
+  sha256: 8b8d7b121855d43c52af4899552f1458ecd83bc9e50748dc4180e62e1d2bedd9
 
 build:
   number: 0
@@ -14,7 +14,7 @@ build:
   # compiler is required to convert protocol buffer definitions.
   # The build has only been tested on linux-64
   noarch: python
-  skip: True  # [not linux]
+  skip: true  # [not linux]
   ignore_run_exports:
     - libgcc-ng
     - libstdcxx-ng
