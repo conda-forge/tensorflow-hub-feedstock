@@ -33,6 +33,7 @@ requirements:
     - six >=1.12.0
     - protobuf >=3.8.0
     - tensorflow >=1.14.0
+    - setuptools
 
 test:
   imports:
