@@ -1,4 +1,4 @@
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: tensorflow-hub
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
-  sha256: 8b8d7b121855d43c52af4899552f1458ecd83bc9e50748dc4180e62e1d2bedd9
+  sha256: 9411159d40857806303188a903712ff6f97fc88b47715f2f5895ab1c246ef16b
 
 build:
   number: 0
@@ -24,6 +24,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - bazel >=0.24
+    - setuptools
+    - wheel
   host:
     - python
     - pip
