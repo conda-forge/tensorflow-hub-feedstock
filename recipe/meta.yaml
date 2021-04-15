@@ -27,10 +27,10 @@ requirements:
     - setuptools
     - wheel
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - numpy >=1.12.0
     - six >=1.12.0
     - protobuf >=3.8.0
