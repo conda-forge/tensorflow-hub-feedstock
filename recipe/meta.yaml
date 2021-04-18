@@ -1,4 +1,4 @@
-{% set version = "0.9.0" %}
+{% set version = "0.12.0" %}
 
 package:
   name: tensorflow-hub
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
-  sha256: 9411159d40857806303188a903712ff6f97fc88b47715f2f5895ab1c246ef16b
+  sha256: b192ef3a9a6cbeaee46142d64b47b979828dbf41fc56d48c6587e08f6b596446
 
 build:
   number: 0
@@ -27,12 +27,11 @@ requirements:
     - setuptools
     - wheel
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - numpy >=1.12.0
-    - six >=1.12.0
     - protobuf >=3.8.0
     - tensorflow >=1.14.0
 
