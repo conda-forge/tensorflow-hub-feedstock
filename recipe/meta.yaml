@@ -12,9 +12,7 @@ build:
   number: 0
   # This is a noarch: python package, it contains no compiled code but a
   # compiler is required to convert protocol buffer definitions.
-  # The build has only been tested on linux-64
   noarch: python
-  skip: true  # [not linux]
   ignore_run_exports:
     - libgcc-ng
     - libstdcxx-ng
@@ -30,6 +28,8 @@ requirements:
     - python >=3.6
     - pip
   run:
+    # The build has only been tested on linux-64
+    - __linux
     - python >=3.6
     - numpy >=1.12.0
     - protobuf >=3.8.0
