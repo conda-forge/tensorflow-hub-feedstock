@@ -1,4 +1,4 @@
-{% set version = "0.16.0" %}
+{% set version = "0.16.1" %}
 
 package:
   name: tensorflow-hub
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
-  sha256: 1ce7ed681e8e1b28dd5294b484abadf5f8de37eb6dcf523335e218f4cf720210
+  sha256: ce6abd3f1d39d42333b07c608ae022ac09a3f5984b297b21436c3389d7b77af5
 
 build:
   number: 0
