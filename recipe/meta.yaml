@@ -27,6 +27,7 @@ requirements:
     - wheel
   host:
     - python {{ python_min }}
+    - setuptools
     - pip
   run:
     # The build has only been tested on linux-64
