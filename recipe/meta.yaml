@@ -43,7 +43,7 @@ test:
 about:
   home: https://www.tensorflow.org/hub/
   license: Apache-2.0
-  license_file: LICENSE
+  license_file: tensorflow_hub/LICENSE
   summary: A library for transfer learning by reusing parts of TensorFlow models.
 
 extra:
