@@ -5,24 +5,15 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/tensorflow/hub/archive/v{{ version }}.tar.gz
-  sha256: ce6abd3f1d39d42333b07c608ae022ac09a3f5984b297b21436c3389d7b77af5
+  url: https://pypi.org/packages/py2.py3/t/tensorflow-hub/tensorflow_hub-{{ version }}-py2.py3-none-any.whl
+  sha256: e10c184b3d08daeafada11ffea2dd46781725b6bef01fad1f74d6634ad05311f
 
 build:
-  number: 2
-  # This is a noarch: python package, it contains no compiled code but a
-  # compiler is required to convert protocol buffer definitions.
+  number: 3
   noarch: python
-  ignore_run_exports:
-    - {{ stdlib("c") }}
-    - {{ compiler("cxx") }}
+  script: {{ PYTHON }} -m pip install -vv --no-deps --no-build-isolation tensorflow_hub-{{ version }}-py2.py3-none-any.whl
 
 requirements:
-  build:
-    - {{ compiler("c") }}
-    - {{ stdlib("c") }}
-    - {{ compiler('cxx') }}
-    - bazel 6.*
   host:
     - python {{ python_min }}
     - pip
@@ -37,14 +28,19 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
+    - pip
+  commands:
+    - pip check
   imports:
     - tensorflow_hub
 
 about:
-  home: https://www.tensorflow.org/hub/
+  home: https://pypi.org/project/tensorflow-hub/
   license: Apache-2.0
-  license_file: tensorflow_hub/LICENSE
+  license_family: Apache
+  license_file: LICENSE
   summary: A library for transfer learning by reusing parts of TensorFlow models.
+  dev_url: https://github.com/tensorflow/hub
 
 extra:
   recipe-maintainers:

@@ -3,11 +3,13 @@ About tensorflow-hub-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/tensorflow-hub-feedstock/blob/main/LICENSE.txt)
 
-Home: https://www.tensorflow.org/hub/
+Home: https://pypi.org/project/tensorflow-hub/
 
 Package license: Apache-2.0
 
 Summary: A library for transfer learning by reusing parts of TensorFlow models.
+
+Development: https://github.com/tensorflow/hub
 
 Current build status
 ====================
